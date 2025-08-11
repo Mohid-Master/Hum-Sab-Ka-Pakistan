@@ -3,7 +3,7 @@ import {Suspense} from "react";
 import { Geist, Geist_Mono,Merriweather } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/lib/ui/components/Navbar";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
