@@ -41,6 +41,7 @@ export default function RootLayout({
         <Suspense fallback={<Loading />}>
         {children}
         </Suspense>
+        <SpeedInsights />
       </body>
     </html>
   );
