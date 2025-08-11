@@ -34,6 +34,11 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
     const oldTheme = theme;
     setThemeState(newTheme);
     localStorage.setItem('theme', newTheme);
+    if (oldTheme === 'dark') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
 
     // GSAP animation for theme change
     const htmlElement = document.documentElement;

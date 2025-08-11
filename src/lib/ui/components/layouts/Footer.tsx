@@ -4,6 +4,7 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Home, Info, Book, Github, Linkedin, Heart } from 'lucide-react'; // Import icons
+import Link from 'next/link';
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -38,19 +39,19 @@ export default function Footer() {
         <nav className="mb-4 md:mb-0">
           <ul className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm">
             <li>
-              <a href="/" className="hover:text-green-400 flex items-center">
+              <Link href="/" className="hover:text-green-400 flex items-center">
                 <Home className="h-4 w-4 mr-1" /> Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/history" className="hover:text-green-400 flex items-center">
+              <Link href="/history" className="hover:text-green-400 flex items-center">
                 <Book className="h-4 w-4 mr-1" /> History
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/facts" className="hover:text-green-400 flex items-center">
+              <Link href="/facts" className="hover:text-green-400 flex items-center">
                 <Info className="h-4 w-4 mr-1" /> Facts
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

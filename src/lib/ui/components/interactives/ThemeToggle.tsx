@@ -3,13 +3,13 @@
 
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext'; // Ensure this path is correct
-import { Moon, Palette } from 'lucide-react'; // Lucide icons
-
+import { Sun ,Moon, Palette } from 'lucide-react'; // Lucide icons
+{/* <Sun /> */}
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
 
-  let Icon = Moon;
-  let label = 'Toggle theme';
+  let Icon = Sun;
+  const label = 'Toggle theme';
   let bgColorClass = 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600';
   let textColorClass = 'text-gray-800 dark:text-white';
   let iconColorClass = 'text-yellow-500 dark:text-yellow-300'; // Default for Sun

@@ -8,7 +8,7 @@ import { Merriweather } from "next/font/google"; // Merriweather from Google Fon
 // ensure their import paths are correct based on your setup.
 // For demonstration, I'm assuming them as if they were similar to Google Fonts for variable setup.
 // You might need to adjust these imports if Geist is handled differently in your project.
-import { Geist, Geist_Mono } from 'next/font/google'; // Example for local fonts if they are not from @next/font/google
+import { Geist } from 'next/font/google'; // Example for local fonts if they are not from @next/font/google
 
 // Your custom Geist font setup might look something like this if local:
 const geistSans = Geist({
@@ -16,10 +16,10 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 // const merriweather = Merriweather({
 //   variable: "--font-merriweather",
 //   subsets: ["latin"],

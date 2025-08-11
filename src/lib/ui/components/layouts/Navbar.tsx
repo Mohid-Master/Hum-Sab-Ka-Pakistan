@@ -1,7 +1,7 @@
 // src/lib/ui/components/Navbar.tsx
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link, { LinkProps } from 'next/link'; // Import LinkProps for better typing
 import { motion, AnimatePresence } from 'framer-motion';
