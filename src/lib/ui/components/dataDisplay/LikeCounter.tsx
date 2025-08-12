@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { incrementLike } from '@/app/actions/Likes'; // Import Server Action
+import { incrementLike } from '@/app/actions/Likes';
 import { doc, onSnapshot } from 'firebase/firestore';
 import { firestore } from '@/lib/firebase/firebaseConfig'; // Your Firebase init
 import { gsap } from 'gsap';
@@ -14,6 +14,7 @@ interface LikeCounterProps {
 
 export default function LikeCounter({ contentId, initialLikes }: LikeCounterProps) {
     const [likes, setLikes] = useState(initialLikes);
+    const [isLoading, setIsLoading] = useState(false);
 
     // Real-time listener for updates
     useEffect(() => {
@@ -33,11 +34,12 @@ export default function LikeCounter({ contentId, initialLikes }: LikeCounterProp
             }
         });
         return () => unsubscribe(); // Cleanup listener on unmount
-    }, [contentId, likes]); // Added likes to dependency array to trigger animation correctly
+    }, [contentId, likes]);
 
     const handleLike = async () => {
         const MAX_LIKES_PER_CONTENT = 50;
         const localStorageKey = `likes_${contentId}`;
+         setIsLoading(true);
         const currentLikes = parseInt(localStorage.getItem(localStorageKey) || '0', 10);
 
         if (currentLikes >= MAX_LIKES_PER_CONTENT) {
@@ -50,20 +52,28 @@ export default function LikeCounter({ contentId, initialLikes }: LikeCounterProp
 
         // Increment local storage count
         localStorage.setItem(localStorageKey, (currentLikes + 1).toString());
-
         const result = await incrementLike(contentId);
+        setIsLoading(false);
+        // console.log(isLoading)
         if (!result.success) {
             // Rollback if there was an error (optional, but good practice)
             setLikes(prev => prev - 1);
             console.log('Failed to record like. Please try again.',result);
         }
+
+        setIsLoading(false);
     };
 
     return (
         <button
             onClick={handleLike}
-            className="flex items-center space-x-2 p-2 rounded-lg bg-[#808080] -100 hover:bg-[#808080] -200 transition-colors"
+            className="flex items-center space-x-2 p-2 rounded-lg hover:bg-[#fff] -200 transition-colors"
         >
+            {isLoading ? (
+                <div className="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full border-r-transparent text-red-500" role="status">
+                    {/* <span className="visually-hidden">Loading...</span> */}
+                </div>
+            ) : (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-red-500"
@@ -78,6 +88,7 @@ export default function LikeCounter({ contentId, initialLikes }: LikeCounterProp
                     d="M4.318 6.318a4.5 4.5 0 000 6.364L12 22.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                 />
             </svg>
+             )}
             <span className="like-count font-bold">{likes}</span>
         </button>
     );

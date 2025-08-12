@@ -29,12 +29,12 @@ const NavLink = ({ href, children, className, onClick, ...props }: NavLinkProps)
                  ${isActive
           ? 'bg-[#029641] text-white shadow-inner shadow-green-800' // Active state
           : theme === 'light'
-            ? 'text-white hover:bg-[#808080] -100' // Light theme inactive
+            ? 'text-[#01411C] hover:bg-[#01411C]  hover:text-white' // Light theme inactive
             : theme === 'dark'
-              ? 'text-white hover:bg-[#808080] -700' // Dark theme inactive
-          : 'text-white hover:bg-green-500/30'} // Inactive state
+              ? 'text-white hover:bg-[#fff] hover:text-[#01411C]' // Dark theme inactive
+          : 'text-white hover:bg-[#01411C]'} // Inactive state
                  ${className || ''}
-                 focus:outline-none focus:ring-2 focus:ring-green-300`} // Focus state for accessibility
+                 focus:outline-none focus:ring-2 focus:ring-[#029641]`} // Focus state for accessibility
       onClick={onClick} // Pass onClick directly to Link
       {...props} // Pass any other Link props
     >
@@ -60,28 +60,35 @@ export default function Navbar() {
   }, []);
 
   return (
-    <motion.nav
+    <nav
       className={`w-full py-2 px-4 md:px-8 shadow-md flex justify-between items-center z-50 relative backdrop-blur-sm bg-opacity-80
-                  ${theme === 'light' ? 'bg-white shadow-green-200' :
-                    theme === 'dark' ? 'bg-[#014116]  shadow-black' :
+                  ${theme === 'light' ? 'bg-white shadow-[#029641]' :
+                    theme === 'dark' ? 'bg-[#000]  shadow-black' :
                     'bg-[#01411C] shadow-[FF0000]'}
-                  
                   transition-colors duration-500`}
+                  // initial={{
+                  //   y:30,
+                  //   opacity:0,
+                  // }}
+                  // animate={{
+                  //   y:0,
+                  //   opacity:1,
+                  // }}
     >
       {/* Left Section: Logo and Title */}
-      <div className="flex items-center space-x-2 md:space-x-4">
+      <div className="flex items-center space-x-1 md:space-x-1">
         <Link href="/" className="flex items-center">
           <Image
             src='/web-app-manifest-512x512.png'
-            width={40}
-            height={40}
+            width={51.2}
+            height={51.2}
             alt='Hum Sab Ka Pakistan Logo'
             priority // Preload for better LCP
           />
           <motion.h1
-            className={`ml-2 text-xl md:text-2xl font-bold whitespace-nowrap
-                        ${theme === 'light' ? 'text-green-800' :
-                          theme === 'dark' ? 'text-gray-100' :
+            className={`text-md md:text-sm font-bold 
+                        ${theme === 'light' ? 'text-[#01411C]' :
+                          theme === 'dark' ? 'text-[#fff]' :
                           'text-white'}
                         transition-colors duration-500`}
             whileHover={{ scale: 1.05 }} // Slightly less aggressive hover
@@ -106,9 +113,9 @@ export default function Navbar() {
           aria-label="Toggle mobile menu"
           aria-expanded={isMobileMenuOpen}
           className={`p-2 rounded-md transition-colors duration-300
-                      ${theme === 'light' ? 'text-gray-700 hover:bg-[#808080] -100' :
-                        theme === 'dark' ? 'text-gray-100 hover:bg-[#808080] -700' :
-                        'text-white hover:bg-green-600'}`}
+                      ${theme === 'light' ? 'text-black hover:bg-[#029641] ' :
+                        theme === 'dark' ? 'text-white hover:bg-[#000] ' :
+                        'text-white hover:bg-[#01411C]'}`}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -124,8 +131,8 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className={`absolute top-full left-0 w-full py-4 shadow-lg md:hidden flex flex-col items-center space-y-4 z-40
                         ${theme === 'light' ? 'bg-white' :
-                          theme === 'dark' ? 'bg-[#808080] -800' :
-                          'bg-green-700'}`}>
+                          theme === 'dark' ? 'bg-[#000] ' :
+                          'bg-[#029641]'}`}>
             {/* Pass onClick to NavLink to close menu when clicked */}
             <NavLink href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
             <NavLink href="/history" onClick={() => setIsMobileMenuOpen(false)}>History</NavLink>
@@ -133,6 +140,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
 }

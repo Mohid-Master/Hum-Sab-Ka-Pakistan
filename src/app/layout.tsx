@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 // Assuming Geist and Merriweather are correctly imported from wherever they reside
 // For example, if 'next/font/google' is the source:
-import { Merriweather } from "next/font/google"; // Merriweather from Google Fonts
+import { Inter } from "next/font/google"; // Merriweather from Google Fonts
 // If Geist fonts are custom or from a library like '@geist-ui/react-icons/fonts',
 // ensure their import paths are correct based on your setup.
 // For demonstration, I'm assuming them as if they were similar to Google Fonts for variable setup.
@@ -26,8 +26,8 @@ import "@/app/globals.css";
 
 
 // Merriweather from Google Fonts
-const merriweather = Merriweather({
-  variable: "--font-merriweather",
+const inter = Inter({
+  variable: "--font-inter",
   weight: ["300", "400", "700", "900"], // Specify weights used to avoid errors
   subsets: ["latin"],
   display: "swap",
@@ -40,6 +40,7 @@ import { ThemeProvider } from "@/context/ThemeContext"; // Import ThemeProvider
 import Navbar from "@/lib/ui/components/layouts/Navbar"; // Import Navbar
 import { LanguageProvider } from "@/context/LanguageContext"; // Import LanguageProvider
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Loading from "./Loading";
 
 export const metadata: Metadata = {
   title: "Hum Sab Ka Pakistan",
@@ -53,15 +54,15 @@ export default function RootLayout({
 }>) {
   return (
     // Apply Merriweather to HTML for global default, Geist to body for primary content
-    <html lang="en" className={merriweather.className}>
+    <html lang="en" className={inter.className}>
       <head>
         <meta name="apple-mobile-web-app-title" content="OurPakistan" />
         {/* Potentially add more meta tags for PWA/SEO */}
       </head>
       <body
         className={`${geistSans.className} antialiased 
-                    bg-white text-gray-900 transition-colors duration-500
-                    dark:bg-[#808080] -900 dark:text-gray-100`}
+                    bg-[#01411c] text-gray-900 transition-colors duration-500
+                    dark:bg-[#808080] -900 dark:text-[#fff]`}
         // The data-theme attribute will be set by ThemeContext on the <html> tag
       >
         <ThemeProvider>
@@ -84,10 +85,10 @@ export default function RootLayout({
 }
 
 // Simple Loading component for Suspense fallback
-function Loading() {
-  return (
-    <div className="flex justify-center items-center min-h-[50vh] text-2xl font-semibold text-gray-600 dark:text-gray-400">
-      <h2>🌀 Loading Content...</h2>
-    </div>
-  );
-}
+// function Loading() {
+//   return (
+//     <div className="flex justify-center items-center min-h-[50vh] text-2xl font-semibold text-gray-600 dark:text-gray-400">
+//       <h2>🌀 Loading Content...</h2>
+//     </div>
+//   );
+// }

@@ -1,6 +1,7 @@
 // src/lib/ui/components/interactive/ThemeToggle.tsx
 'use client';
 
+
 import React from 'react';
 import { useTheme } from '@/context/ThemeContext'; // Ensure this path is correct
 import { Sun ,Moon, Palette } from 'lucide-react'; // Lucide icons
@@ -10,30 +11,33 @@ export default function ThemeToggle() {
 
   let Icon = Sun;
   const label = 'Toggle theme';
-  let bgColorClass = 'bg-[#808080] -200 hover:bg-[#808080] -300 dark:bg-[#808080] -700 dark:hover:bg-[#808080] -600';
-  let textColorClass = 'text-gray-800 dark:text-white';
-  let iconColorClass = 'text-yellow-500 dark:text-yellow-300'; // Default for Sun
+  let bgColorClass = 'bg-[#000] hover:bg-[#fff]';
+  // let textColorClass = 'text-[#000] dark:text-[#fff]';
+  let iconColorClass = ' text-[#fff] hover:text-[#ffeb3b]'; 
 
-  if (theme === 'dark') {
+ switch (theme) {
+    case 'dark':
     Icon = Moon;
-    bgColorClass = 'bg-[#808080] -700 hover:bg-[#808080] -600';
-    textColorClass = 'text-white dark:text-gray-200';
-    iconColorClass = 'text-blue-300 dark:text-blue-500'; // Color for Moon
-  } else if (theme === 'pakistani') {
-    Icon = Palette; // Or a custom icon for Pakistani theme, e.g., a small flag
-    bgColorClass = 'bg-green-600 hover:bg-green-500';
-    textColorClass = 'text-white';
-    iconColorClass = 'text-amber-300'; // Color for Palette/Pakistani theme
+    // bgColorClass = 'bg-[#333] hover:bg-[#444] dark:bg-[#fff] dark:hover:bg-[#f0f0f0]';
+    // textColorClass = 'text-[#fff] dark:text-[#000]';
+    iconColorClass = 'text-[#008eff]'; 
+      break;
+    case 'pakistani':
+    Icon = Palette; 
+    bgColorClass = 'bg-[#01411c] hover:bg-[#fff]';
+    // textColorClass = 'text-[#fff]';
+    iconColorClass = 'text-[#fff] hover:text-[#01411c]'; 
+    // Color for Palette/Pakistani theme
+      break;
   }
 
   return (
     <button
       onClick={toggleTheme}
       aria-label={label}
-      className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center
-                  ${bgColorClass} ${textColorClass}`}
+      className={`p-1 rounded-full transition-all duration-300 ${bgColorClass} flex items-center justify-center`}
     >
-      <Icon size={20} className={`${iconColorClass}`} />
+      <Icon size={25} className={`${iconColorClass}`} />
       {/* Optional: Add text for better UX on larger screens */}
       {/* <span className="ml-2 hidden md:inline">{theme === 'light' ? 'Light' : theme === 'dark' ? 'Dark' : 'Pakistani'}</span> */}
     </button>

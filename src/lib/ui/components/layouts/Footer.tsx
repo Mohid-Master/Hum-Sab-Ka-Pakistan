@@ -25,13 +25,13 @@ export default function Footer() {
 
   // Dynamic classes based on theme
   const footerThemeClasses = {
-    light: 'bg-white text-[#01411C] shadow-lg shadow-[0px_-7px_23px_-13px_#01411C]',
-    dark: 'bg-[#808080] -900 text-white shadow-lg shadow-gray-700',
+    light: 'bg-white text-[#01411C] shadow-lg shadow-[0px_-7px_14px_0px_rgba(0,_65,_28,_0.5)]',
+    dark: 'bg-[#111] -900 text-white shadow-lg shadow-gray-700',
     pakistani: 'bg-[#01411C] text-white shadow-lg shadow-white',
   };
 
   const linkHoverClasses = {
-    light: 'hover:text-[#01411C]',
+    light: 'hover:text-[#ffeb3b]',
     dark: 'hover:text-[#01411C]', // You might want a different hover color for dark
     pakistani: 'hover:text-[#FFFF00]', // Gold-ish hover for Pakistani theme
   };
