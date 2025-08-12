@@ -11,7 +11,7 @@ export default function SidePanel() {
   const contentIdForLikes = 'general-likes';
 
   return (
-    <div className="fixed right-0 top-1/2 transform -translate-y-1/2 p-4 bg-gray-100 dark:bg-gray-800 shadow-lg rounded-l-lg flex flex-col items-center space-y-4 z-50">
+    <div className="fixed right-0 top-1/2 transform -translate-y-1/2 p-4 bg-[#029641] -100 dark:bg-[#04eb65] -800 shadow-lg rounded-l-lg flex flex-col items-center space-y-4 z-50">
       {/* Like Counter - You'll need to fetch initialLikes here or in a parent component */}
       {/* For a fixed panel, fetching initial likes for a general ID might be suitable */}
       {/* Or you might conditionally render/update the LikeCounter based on the current page */}

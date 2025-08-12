@@ -25,15 +25,15 @@ export default function Footer() {
 
   // Dynamic classes based on theme
   const footerThemeClasses = {
-    light: 'bg-white text-[#01411C] shadow-lg shadow-gray-300 shadow-[0px_-7px_23px_-13px_#01411C]',
-    dark: 'bg-gray-900 text-white shadow-lg shadow-gray-700',
-    pakistani: 'bg-green-800 text-white shadow-lg shadow-amber-500',
+    light: 'bg-white text-[#01411C] shadow-lg shadow-[0px_-7px_23px_-13px_#01411C]',
+    dark: 'bg-[#808080] -900 text-white shadow-lg shadow-gray-700',
+    pakistani: 'bg-[#01411C] text-white shadow-lg shadow-white',
   };
 
   const linkHoverClasses = {
-    light: 'hover:text-green-400',
-    dark: 'hover:text-green-400', // You might want a different hover color for dark
-    pakistani: 'hover:text-amber-300', // Gold-ish hover for Pakistani theme
+    light: 'hover:text-[#01411C]',
+    dark: 'hover:text-[#01411C]', // You might want a different hover color for dark
+    pakistani: 'hover:text-[#FFFF00]', // Gold-ish hover for Pakistani theme
   };
 
 
@@ -48,7 +48,7 @@ export default function Footer() {
           <p className="text-lg font-semibold">Pakistan Independence Day Project</p>
           <p className="text-sm">&copy; {new Date().getFullYear()} Mohid. All rights reserved.</p>
           <p className="text-xs mt-1 flex items-center justify-center md:justify-start">
-            Made with <Heart className="h-3 w-3 mx-1 text-red-500 fill-current" /> for Pakistan.
+            Made with <Heart className="h-3 w-3 mx-1 text-[#FF0000] fill-current" /> for Pakistan.
           </p>
         </div>
 

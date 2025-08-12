@@ -45,9 +45,9 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
     // Define colors for animation
     const colors = {
-      light: { bgColor: '#ffffff', textColor: '#1a202c' },
-      dark: { bgColor: '#1a202c', textColor: '#e2e8f0' },
-      pakistani: { bgColor: '#006400', textColor: '#ffffff' },
+      light: { bgColor: '#ffffff', textColor: '#000' },
+      dark: { bgColor: '#111', textColor: '#fff' },
+      pakistani: { bgColor: '#01411C', textColor: '#ffffff' },
     };
 
     const targetBgColor = colors[newTheme].bgColor;

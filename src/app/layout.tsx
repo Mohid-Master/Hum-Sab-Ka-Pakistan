@@ -16,10 +16,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+import "@/app/globals.css"; 
+// Your global Tailwind CSS
+
 // const merriweather = Merriweather({
 //   variable: "--font-merriweather",
 //   subsets: ["latin"],
@@ -35,9 +34,10 @@ const merriweather = Merriweather({
 });
 
 import "./globals.css"; // Your global Tailwind CSS
-import Navbar from "@/lib/ui/components/layouts/Navbar"; // Keep your existing Navbar path
+import SidePanel from "@/lib/ui/components/layouts/SidePanel"; // Import the new SidePanel component
 import Footer from "@/lib/ui/components/layouts/Footer"; // Import the new Footer component
 import { ThemeProvider } from "@/context/ThemeContext"; // Import ThemeProvider
+import Navbar from "@/lib/ui/components/layouts/Navbar"; // Import Navbar
 import { LanguageProvider } from "@/context/LanguageContext"; // Import LanguageProvider
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -61,12 +61,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.className} antialiased 
                     bg-white text-gray-900 transition-colors duration-500
-                    dark:bg-gray-900 dark:text-gray-100`}
+                    dark:bg-[#808080] -900 dark:text-gray-100`}
         // The data-theme attribute will be set by ThemeContext on the <html> tag
       >
         <ThemeProvider>
           <LanguageProvider>
-            <Navbar />
+            <Navbar /> {/* Include the Navbar */}
+            <SidePanel />
             {/* The main content area with dynamic height to push footer down */}
             <main className="container mx-auto px-4 py-8 min-h-screen">
               <Suspense fallback={<Loading />}>

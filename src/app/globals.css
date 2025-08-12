@@ -34,8 +34,8 @@ body {
 /* These are just examples, Tailwind's dark mode handles much of this */
 :root {
   --color-bg-light: #ffffff;
-  --color-text-light: #1a202c;
-  --color-bg-dark: #1a202c;
+  --color-text-light: #01411C;
+  --color-bg-dark: #01411C;
   --color-text-dark: #e2e8f0;
 }
 

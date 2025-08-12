@@ -27,11 +27,11 @@ const NavLink = ({ href, children, className, onClick, ...props }: NavLinkProps)
       href={href}
       className={`text-sm md:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg transition-colors duration-300 relative overflow-hidden group
                  ${isActive
-          ? 'bg-green-600 text-white shadow-inner shadow-green-800' // Active state
+          ? 'bg-[#029641] text-white shadow-inner shadow-green-800' // Active state
           : theme === 'light'
-            ? 'text-gray-700 hover:bg-gray-100' // Light theme inactive
+            ? 'text-white hover:bg-[#808080] -100' // Light theme inactive
             : theme === 'dark'
-              ? 'text-gray-200 hover:bg-gray-700' // Dark theme inactive
+              ? 'text-white hover:bg-[#808080] -700' // Dark theme inactive
           : 'text-white hover:bg-green-500/30'} // Inactive state
                  ${className || ''}
                  focus:outline-none focus:ring-2 focus:ring-green-300`} // Focus state for accessibility
@@ -63,8 +63,8 @@ export default function Navbar() {
     <motion.nav
       className={`w-full py-2 px-4 md:px-8 shadow-md flex justify-between items-center z-50 relative backdrop-blur-sm bg-opacity-80
                   ${theme === 'light' ? 'bg-white shadow-green-200' :
-                    theme === 'dark' ? 'bg-gray-800 shadow-gray-700' :
-                    'bg-green-700 shadow-amber-500'}
+                    theme === 'dark' ? 'bg-[#014116]  shadow-black' :
+                    'bg-[#01411C] shadow-[FF0000]'}
                   
                   transition-colors duration-500`}
     >
@@ -106,8 +106,8 @@ export default function Navbar() {
           aria-label="Toggle mobile menu"
           aria-expanded={isMobileMenuOpen}
           className={`p-2 rounded-md transition-colors duration-300
-                      ${theme === 'light' ? 'text-gray-700 hover:bg-gray-100' :
-                        theme === 'dark' ? 'text-gray-100 hover:bg-gray-700' :
+                      ${theme === 'light' ? 'text-gray-700 hover:bg-[#808080] -100' :
+                        theme === 'dark' ? 'text-gray-100 hover:bg-[#808080] -700' :
                         'text-white hover:bg-green-600'}`}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -124,7 +124,7 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className={`absolute top-full left-0 w-full py-4 shadow-lg md:hidden flex flex-col items-center space-y-4 z-40
                         ${theme === 'light' ? 'bg-white' :
-                          theme === 'dark' ? 'bg-gray-800' :
+                          theme === 'dark' ? 'bg-[#808080] -800' :
                           'bg-green-700'}`}>
             {/* Pass onClick to NavLink to close menu when clicked */}
             <NavLink href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>

@@ -10,13 +10,13 @@ export default function ThemeToggle() {
 
   let Icon = Sun;
   const label = 'Toggle theme';
-  let bgColorClass = 'bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600';
+  let bgColorClass = 'bg-[#808080] -200 hover:bg-[#808080] -300 dark:bg-[#808080] -700 dark:hover:bg-[#808080] -600';
   let textColorClass = 'text-gray-800 dark:text-white';
   let iconColorClass = 'text-yellow-500 dark:text-yellow-300'; // Default for Sun
 
   if (theme === 'dark') {
     Icon = Moon;
-    bgColorClass = 'bg-gray-700 hover:bg-gray-600';
+    bgColorClass = 'bg-[#808080] -700 hover:bg-[#808080] -600';
     textColorClass = 'text-white dark:text-gray-200';
     iconColorClass = 'text-blue-300 dark:text-blue-500'; // Color for Moon
   } else if (theme === 'pakistani') {
