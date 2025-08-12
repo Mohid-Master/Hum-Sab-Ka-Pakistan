@@ -5,10 +5,9 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link, { LinkProps } from 'next/link'; // Import LinkProps for better typing
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react'; // Lucide icons for mobile menu
+import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation'; // Import usePathname hook
 import { useTheme } from '@/context/ThemeContext'; // Import useTheme hook
-import ThemeToggle from '@/lib/ui/components/interactives/ThemeToggle'; // Corrected path
-import LanguageSwitcher from '@/lib/ui/components/interactives/LanguageSwitcher'; // Assuming this exists here too
 
 // Helper component for navigation links
 // It extends LinkProps to correctly pass all standard Link props including onClick
@@ -19,17 +18,27 @@ interface NavLinkProps extends LinkProps {
 }
 
 const NavLink = ({ href, children, className, onClick, ...props }: NavLinkProps) => {
+  const pathname = usePathname(); // Get current pathname
+  const isActive = pathname === href; // Check if the link is active
+  const { theme } = useTheme(); // Get current theme
+
   return (
     <Link
       href={href}
-      className={`text-sm md:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg transition-colors duration-300
-                 text-gray-700 hover:text-green-700
-                 dark:text-gray-200 dark:hover:text-green-400
-                 data-[theme=pakistani]:text-white data-[theme=pakistani]:hover:text-amber-300
-                 ${className || ''}`}
+      className={`text-sm md:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg transition-colors duration-300 relative overflow-hidden group
+                 ${isActive
+          ? 'bg-green-600 text-white shadow-inner shadow-green-800' // Active state
+          : theme === 'light'
+            ? 'text-gray-700 hover:bg-gray-100' // Light theme inactive
+            : theme === 'dark'
+              ? 'text-gray-200 hover:bg-gray-700' // Dark theme inactive
+          : 'text-white hover:bg-green-500/30'} // Inactive state
+                 ${className || ''}
+                 focus:outline-none focus:ring-2 focus:ring-green-300`} // Focus state for accessibility
       onClick={onClick} // Pass onClick directly to Link
       {...props} // Pass any other Link props
     >
+      {/* Optional: Add an underline animation on hover/active if desired */}
       {children}
     </Link>
   );
@@ -52,15 +61,12 @@ export default function Navbar() {
 
   return (
     <motion.nav
-      className={`w-full py-2 px-4 md:px-8 shadow-md flex justify-between items-center z-50 relative
+      className={`w-full py-2 px-4 md:px-8 shadow-md flex justify-between items-center z-50 relative backdrop-blur-sm bg-opacity-80
                   ${theme === 'light' ? 'bg-white shadow-green-200' :
                     theme === 'dark' ? 'bg-gray-800 shadow-gray-700' :
                     'bg-green-700 shadow-amber-500'}
+                  
                   transition-colors duration-500`}
-      initial={{ y: "-100%" }}
-      animate={{ y: '0%' }}
-      transition={{ duration: 0.3 }}
-      data-theme={theme} // Pass theme to Navbar for CSS targeting
     >
       {/* Left Section: Logo and Title */}
       <div className="flex items-center space-x-2 md:space-x-4">
@@ -86,14 +92,11 @@ export default function Navbar() {
         </Link>
       </div>
 
-      {/* Right Section: Desktop Navigation & Toggles */}
-      <div className="hidden md:flex items-center space-x-6">
-        <NavLink href="/">Home</NavLink>
+      {/* Right Section: Desktop Navigation */}
+      <div className="hidden md:flex items-center space-x-4">
+        <NavLink href="/">Home</NavLink> {/* Fixed typo */}
         <NavLink href="/history">History</NavLink>
         <NavLink href="/facts">Facts</NavLink>
-        
-        <ThemeToggle /> {/* Theme Toggle Button */}
-        <LanguageSwitcher /> {/* Language Switcher Button (assuming its path too) */}
       </div>
 
       {/* Mobile Menu Button */}
@@ -119,20 +122,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
             transition={{ duration: 0.2 }}
-            className={`absolute top-full left-0 w-full py-4 shadow-lg md:hidden
-                        flex flex-col items-center space-y-4 z-40
+            className={`absolute top-full left-0 w-full py-4 shadow-lg md:hidden flex flex-col items-center space-y-4 z-40
                         ${theme === 'light' ? 'bg-white' :
                           theme === 'dark' ? 'bg-gray-800' :
-                          'bg-green-700'}`}
-          >
+                          'bg-green-700'}`}>
             {/* Pass onClick to NavLink to close menu when clicked */}
             <NavLink href="/" onClick={() => setIsMobileMenuOpen(false)}>Home</NavLink>
             <NavLink href="/history" onClick={() => setIsMobileMenuOpen(false)}>History</NavLink>
             <NavLink href="/facts" onClick={() => setIsMobileMenuOpen(false)}>Facts</NavLink>
-            <div className="flex space-x-4 pt-2">
-              <ThemeToggle />
-              <LanguageSwitcher />
-            </div>
           </motion.div>
         )}
       </AnimatePresence>
