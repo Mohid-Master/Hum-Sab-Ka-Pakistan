@@ -73,10 +73,10 @@ export default function Footer() {
         </nav>
 
         <div className="flex space-x-4">
-          <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className={`${linkHoverClasses[theme]}`}>
+          <a href="https://github.com/Mohid-Master" target="_blank" rel="noopener noreferrer" className={`${linkHoverClasses[theme]}`}>
             <Github className="h-6 w-6" />
           </a>
-          <a href="https://linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" className={`${linkHoverClasses[theme]}`}>
+          <a href="www.linkedin.com/in/i-am-mohid" target="_blank" rel="noopener noreferrer" className={`${linkHoverClasses[theme]}`}>
             <Linkedin className="h-6 w-6" />
           </a>
           {/* Add more social media links as needed */}

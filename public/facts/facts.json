@@ -1,0 +1,86 @@
+[
+    {
+      "id": "F001",
+      "type": "fact",
+      "english": {
+        "title": "The World's Second-Highest Mountain",
+        "content": "Pakistan is home to K2, the world's second-highest mountain, standing at 8,611 meters (28,251 feet) above sea level in the Karakoram range."
+      },
+      "urdu": {
+        "title": "دنیا کا دوسرا بلند ترین پہاڑ",
+        "content": "پاکستان دنیا کے دوسرے بلند ترین پہاڑ K2 کا گھر ہے، جو قراقرم کے پہاڑی سلسلے میں سطح سمندر سے 8,611 میٹر (28,251 فٹ) بلند ہے۔"
+      }
+    },
+    {
+      "id": "F002",
+      "type": "fact",
+      "english": {
+        "title": "Largest Man-made Forest",
+        "content": "The Changa Manga Forest in Pakistan is one of the largest man-made forests in the world, primarily used for wildlife conservation and timber production."
+      },
+      "urdu": {
+        "title": "دنیا کا سب سے بڑا انسانی ساختہ جنگل",
+        "content": "پاکستان کا چھانگا مانگا جنگل دنیا کے سب سے بڑے انسانی ساختہ جنگلات میں سے ایک ہے، جسے بنیادی طور پر جنگلی حیات کے تحفظ اور لکڑی کی پیداوار کے لیے استعمال کیا جاتا ہے۔"
+      }
+    },
+    {
+      "id": "F003",
+      "type": "fact",
+      "english": {
+        "title": "Home of the Khewra Salt Mine",
+        "content": "The Khewra Salt Mine, located in Punjab, is the second-largest salt mine in the world and a major tourist attraction."
+      },
+      "urdu": {
+        "title": "کھیوڑہ نمک کی کان کا گھر",
+        "content": "پنجاب میں واقع کھیوڑہ نمک کی کان دنیا کی دوسری سب سے بڑی نمک کی کان اور ایک اہم سیاحتی مقام ہے۔"
+      }
+    },
+    {
+      "id": "F004",
+      "type": "fact",
+      "english": {
+        "title": "Unique Transportation: Rickshaws",
+        "content": "Auto-rickshaws are an iconic and widespread mode of transportation across Pakistan, known for their vibrant decorations and unique presence on the streets."
+      },
+      "urdu": {
+        "title": "منفرد نقل و حمل: رکشے",
+        "content": "آٹو رکشے پاکستان بھر میں نقل و حمل کا ایک مشہور اور وسیع ذریعہ ہیں، جو اپنی رنگین سجاوٹ اور سڑکوں پر منفرد موجودگی کے لیے جانے جاتے ہیں۔"
+      }
+    },
+    {
+      "id": "F005",
+      "type": "fact",
+      "english": {
+        "title": "National Language: Urdu",
+        "content": "While English is also official, Urdu is the national language of Pakistan and is widely spoken and understood across the country."
+      },
+      "urdu": {
+        "title": "قومی زبان: اردو",
+        "content": "اگرچہ انگریزی بھی سرکاری ہے، اردو پاکستان کی قومی زبان ہے اور پورے ملک میں وسیع پیمانے پر بولی اور سمجھی جاتی ہے۔"
+      }
+    },
+    {
+      "id": "F006",
+      "type": "fact",
+      "english": {
+        "title": "Agricultural Economy",
+        "content": "Agriculture plays a vital role in Pakistan's economy, with major crops including wheat, cotton, rice, and sugarcane."
+      },
+      "urdu": {
+        "title": "زرعی معیشت",
+        "content": "زراعت پاکستان کی معیشت میں ایک اہم کردار ادا کرتی ہے، جس میں گندم، کپاس، چاول اور گنا جیسی اہم فصلیں شامل ہیں۔"
+      }
+    },
+    {
+      "id": "F007",
+      "type": "fact",
+      "english": {
+        "title": "Major Producer of Footballs",
+        "content": "Sialkot, a city in Pakistan, is globally renowned for being a major hub for the production of sports goods, particularly hand-stitched footballs."
+      },
+      "urdu": {
+        "title": "فٹ بال کا بڑا پروڈیوسر",
+        "content": "سیالکوٹ، پاکستان کا ایک شہر، کھیلوں کے سامان، خاص طور پر ہاتھ سے سلے ہوئے فٹ بال تیار کرنے کا ایک بڑا مرکز ہونے کی وجہ سے عالمی سطح پر مشہور ہے۔"
+      }
+    }
+  ]

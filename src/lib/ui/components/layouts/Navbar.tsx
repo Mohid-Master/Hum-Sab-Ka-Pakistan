@@ -27,12 +27,12 @@ const NavLink = ({ href, children, className, onClick, ...props }: NavLinkProps)
       href={href}
       className={`text-sm md:text-base font-medium whitespace-nowrap px-3 py-2 rounded-lg transition-colors duration-300 relative overflow-hidden group
                  ${isActive
-          ? 'bg-[#029641] text-white shadow-inner shadow-green-800' // Active state
+          ? 'bg-[#029641] text-white shadow-inner shadow-black' // Active state
           : theme === 'light'
             ? 'text-[#01411C] hover:bg-[#01411C]  hover:text-white' // Light theme inactive
             : theme === 'dark'
               ? 'text-white hover:bg-[#fff] hover:text-[#01411C]' // Dark theme inactive
-          : 'text-white hover:bg-[#01411C]'} // Inactive state
+          : 'text-white hover:bg-[#000]'} // Inactive state
                  ${className || ''}
                  focus:outline-none focus:ring-2 focus:ring-[#029641]`} // Focus state for accessibility
       onClick={onClick} // Pass onClick directly to Link
@@ -62,7 +62,7 @@ export default function Navbar() {
   return (
     <nav
       className={`w-full py-2 px-4 md:px-8 shadow-md flex justify-between items-center z-50 relative backdrop-blur-sm bg-opacity-80
-                  ${theme === 'light' ? 'bg-white shadow-[#029641]' :
+                  ${theme === 'light' ? 'bg-white shadow-[#029641] text-[#01411c]' :
                     theme === 'dark' ? 'bg-[#000]  shadow-black' :
                     'bg-[#01411C] shadow-[FF0000]'}
                   transition-colors duration-500`}

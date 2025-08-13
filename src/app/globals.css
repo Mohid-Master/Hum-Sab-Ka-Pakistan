@@ -12,10 +12,16 @@
   --font-mono: var(--font-geist-mono);
 } */
 
+html {
+  transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    /* Add transitions for dark mode based on prefers-color-scheme */
+    transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
   }
 }
 
@@ -24,6 +30,8 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
 
 /* src/app/global.css */
 /* @tailwind base;
@@ -47,6 +55,8 @@ html[data-theme='pakistani'] {
 
   background-color: var(--color-background); /* Apply to HTML for theme animation */
   color: var(--color-text); /* Apply to HTML for theme animation */
+  /* Add transitions for the pakistani theme */
+  transition: background-color 500ms ease-in-out, color 500ms ease-in-out;
 }
 
 /* You might need to add specific classes to use these variables */
@@ -56,4 +66,126 @@ html[data-theme='pakistani'] {
 }
 .text-pakistani {
   color: var(--color-text);
+}
+
+.transition{
+  height: 100vh;
+  width: 100vw;
+  flex-wrap: wrap;
+  z-index: 99;
+  position: fixed;
+  display: flex;
+  left:0;
+  top:0;
+  /* line-height: 120px; */
+  gap: 0px;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background: radial-gradient(#8dde90, #01411c);
+  /* top: 0; */
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+
+}
+
+.transition .img{
+  /* position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%; */
+  z-index: 50;
+  
+}
+.transition .sp1{
+  text-align: center;
+  z-index: 49;
+  gap: 10px;
+  font-size: 150px;
+  color: #fff;
+  font-family: cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* width: 100%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  
+}
+.transition .sp2{
+  text-align: center;
+  z-index: 49;
+  gap: 10px;
+  font-size: 150px;
+  color: #fff;
+  font-family: cursive;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  /* font-size: 60px; */
+  /* width: 100%; */
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.transition h1{
+      margin: 0 ;
+  overflow:hidden;
+}
+.transition .sp2 h1 span{
+      -webkit-text-stroke: 2px white;
+  color: #ffffff75;
+}
+.transition h1 span{
+  margin:0 15px;
+}
+@media (max-width:767px) {
+.transition .sp2,.transition .sp1{
+  font-size:45px;
+      }
+}
+
+
+
+
+.light{
+  position: absolute;
+  width: 100%;
+  justify-content: space-around;
+  top: 20%;
+  display: flex;
+  height: 170px;
+  background-image: url(/dec.webp);
+  /* overflow:visible; */
+}
+.light .white,
+.light .green{
+      /* padding: 5px; */
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 5px #01411c;
+  animation: blink 3s infinite;
+  transition:all 1s;
+  
+}
+
+.light .white{}
+.light .green{
+  background: '#01411c';
+  animation: blink 3s reverse infinite;
+  
+}
+@keyframes blink {
+  0%{
+  background: #fff;
+  }
+      50%{
+  background: #01411c;
+  }
+      100%{
+  background: #fff;
+  }
 }

@@ -70,13 +70,13 @@ export default function LikeCounter({ contentId, initialLikes }: LikeCounterProp
             className="flex items-center space-x-2 p-2 rounded-lg hover:bg-[#fff] -200 transition-colors"
         >
             {isLoading ? (
-                <div className="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full border-r-transparent text-red-500" role="status">
+                <div className="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full border-r-transparent text-[#f00]" role="status">
                     {/* <span className="visually-hidden">Loading...</span> */}
                 </div>
             ) : (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-red-500"
+                className="h-6 w-6 text-[#f00]  "
                 fill="currentColor"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

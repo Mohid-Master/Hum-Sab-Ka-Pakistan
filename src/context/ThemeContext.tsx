@@ -1,8 +1,7 @@
 // src/context/ThemeContext.tsx
 'use client';
-
-import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
-import { gsap } from 'gsap';
+import {gsap} from 'gsap'
+import React, { createContext, useState, useEffect, useContext, type ReactNode } from 'react';
 
 type Theme = 'light' | 'dark' | 'pakistani';
 

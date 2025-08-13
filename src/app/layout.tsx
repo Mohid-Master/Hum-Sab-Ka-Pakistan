@@ -1,6 +1,9 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { ReactLenis } from 'lenis/react'
+// import gsap from "gsap";
+
 // Assuming Geist and Merriweather are correctly imported from wherever they reside
 // For example, if 'next/font/google' is the source:
 import { Inter } from "next/font/google"; // Merriweather from Google Fonts
@@ -16,7 +19,7 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-import "@/app/globals.css"; 
+import "@/app/globals.css";
 // Your global Tailwind CSS
 
 // const merriweather = Merriweather({
@@ -51,22 +54,26 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+
 }>) {
+
   return (
     // Apply Merriweather to HTML for global default, Geist to body for primary content
     <html lang="en" className={inter.className}>
       <head>
         <meta name="apple-mobile-web-app-title" content="OurPakistan" />
+        <meta name="google-site-verification" content="8xG60lg8-MpiM1H9BMWMJcfxgAVo6eIZiu4sOdu8lGs" />
         {/* Potentially add more meta tags for PWA/SEO */}
       </head>
-      <body
-        className={`${geistSans.className} antialiased 
-                    bg-[#01411c] text-gray-900 transition-colors duration-500
-                    dark:bg-[#808080] -900 dark:text-[#fff]`}
-        // The data-theme attribute will be set by ThemeContext on the <html> tag
+      <body className={`${geistSans.className} antialiased
+                    bg-[#ffffff] text-[#01411c] transition-colors duration-500
+                    dark:bg-[#000000]  dark:text-[#fff]`}
+      // The data-theme attribute will be set by ThemeContext on the <html> tag
       >
         <ThemeProvider>
           <LanguageProvider>
+            <ReactLenis root />
+
             <Navbar /> {/* Include the Navbar */}
             <SidePanel />
             {/* The main content area with dynamic height to push footer down */}
@@ -76,6 +83,7 @@ export default function RootLayout({
               </Suspense>
             </main>
             <Footer /> {/* Your beautiful animated footer */}
+            {/* </Lenis> */}
           </LanguageProvider>
         </ThemeProvider>
         <SpeedInsights />
@@ -83,12 +91,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// Simple Loading component for Suspense fallback
-// function Loading() {
-//   return (
-//     <div className="flex justify-center items-center min-h-[50vh] text-2xl font-semibold text-gray-600 dark:text-gray-400">
-//       <h2>🌀 Loading Content...</h2>
-//     </div>
-//   );
-// }

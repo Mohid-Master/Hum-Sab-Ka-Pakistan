@@ -22,7 +22,7 @@ export default function LanguageSwitcher() {
  exit={{ opacity: 0, y: -5 }}
  transition={{ duration: 0.2 }}
         >
-      {language === 'english' ? 'اردو' : 'English'} {/* Display opposite language */}
+      {language === 'english' ? 'English' : 'اردو'} {/* Display opposite language */}
  </motion.span>
  </AnimatePresence>
 

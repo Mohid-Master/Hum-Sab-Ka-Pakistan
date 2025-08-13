@@ -1,39 +1,31 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+// import gsap from 'gsap';
+// import gsap from 'gsap';
 // import icon1 from '/web-app-manifest-512x512.png'
-
+// This component is intended to be used as a global loading indicator. It should always be visible when rendering.
 const Loading = () => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-    }, 3000); // 3 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 0,y:-2000 },
     visible: {
       opacity: 1,
+      y: 0,
       transition: {
         staggerChildren: 0.5,
       },
     },
-    exit: { opacity: 0, transition: { duration: 0.5 } },
+    exit: { opacity: 0,y:-1000, transition: { duration: 0.5 } },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 40 },
     visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <AnimatePresence>
-      {isVisible && (
+    <AnimatePresence mode="wait">
         <motion.div
           className="flex flex-col items-center justify-center min-h-screen bg-white dark:bg-gray-900"
           variants={containerVariants}
@@ -51,7 +43,6 @@ const Loading = () => {
             hum sab ka Pakistan
           </motion.p>
         </motion.div>
-      )}
     </AnimatePresence>
   );
 };
@@ -69,3 +60,6 @@ export const pageTransitionAnimation = {
   animate: { x: 0, transition: { duration: 0.75, ease: 'easeOut' } },
   exit: { x: '-100%', transition: { duration: 0.75, ease: 'easeIn' } },
 };
+
+
+

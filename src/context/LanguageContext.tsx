@@ -19,6 +19,8 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     // Load language from localStorage on initial load
     const storedLang = (localStorage.getItem('language') as Language) || 'english';
+    if (storedLang == 'english') localStorage.setItem('language', 'english');
+
     setLanguageState(storedLang);
   }, []);
 

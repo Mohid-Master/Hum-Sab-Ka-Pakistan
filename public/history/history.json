@@ -1,0 +1,94 @@
+
+[
+    {
+      "id": "H001",
+      "type": "history",
+      "year": "7000 BCE",
+      "english": {
+        "title": "Ancient Civilizations: Mehrgarh",
+        "content": "One of the earliest known farming villages in South Asia, Mehrgarh, dates back to 7000 BCE, showcasing a rich prehistoric heritage in what is now Balochistan, Pakistan."
+      },
+      "urdu": {
+        "title": "قدیم تہذیبیں: مہر گڑھ",
+        "content": "جنوبی ایشیا کے قدیم ترین زرعی گاؤں میں سے ایک، مہر گڑھ، 7000 قبل مسیح کا ہے، جو موجودہ بلوچستان، پاکستان میں ایک بھرپور ماقبل تاریخ ورثہ دکھاتا ہے۔"
+      }
+    },
+    {
+      "id": "H002",
+      "type": "history",
+      "year": "2500-1900 BCE",
+      "english": {
+        "title": "Indus Valley Civilization: Mohenjo-Daro and Harappa",
+        "content": "The sophisticated urban centers of Mohenjo-Daro and Harappa, flourishing around 2500-1900 BCE, represent one of the world's earliest major civilizations, known for their advanced city planning and drainage systems."
+      },
+      "urdu": {
+        "title": "وادی سندھ کی تہذیب: موئن جو دڑو اور ہڑپہ",
+        "content": "2500-1900 قبل مسیح کے لگ بھگ پروان چڑھنے والے موئن جو دڑو اور ہڑپہ کے جدید شہری مراکز، دنیا کی قدیم ترین بڑی تہذیبوں میں سے ایک کی نمائندگی کرتے ہیں، جو اپنی جدید شہری منصوبہ بندی اور نکاسی آب کے نظام کے لیے مشہور ہیں۔"
+      }
+    },
+    {
+      "id": "H003",
+      "type": "history",
+      "year": "711 CE",
+      "english": {
+        "title": "Arrival of Islam: Muhammad bin Qasim",
+        "content": "The arrival of Islam in the region began with Muhammad bin Qasim's conquest of Sindh in 711 CE, marking a significant cultural and religious shift."
+      },
+      "urdu": {
+        "title": "اسلام کی آمد: محمد بن قاسم",
+        "content": "خطے میں اسلام کی آمد 711 عیسوی میں محمد بن قاسم کی سندھ کی فتح سے شروع ہوئی، جس نے ایک اہم ثقافتی اور مذہبی تبدیلی کو نشان زد کیا۔"
+      }
+    },
+    {
+      "id": "H004",
+      "type": "history",
+      "year": "1526-1857",
+      "english": {
+        "title": "Mughal Empire's Influence",
+        "content": "The Mughal Empire (1526-1857) left an indelible mark on the architecture, art, and culture of the subcontinent, with many magnificent structures like the Badshahi Mosque in Lahore standing as testaments."
+      },
+      "urdu": {
+        "title": "مغل سلطنت کا اثر",
+        "content": "مغل سلطنت (1526-1857) نے برصغیر کی فن تعمیر، فن اور ثقافت پر ایک گہرا اثر چھوڑا، لاہور کی بادشاہی مسجد جیسی کئی شاندار عمارتیں اس کی گواہ ہیں۔"
+      }
+    },
+    {
+      "id": "H005",
+      "type": "history",
+      "year": "1930",
+      "english": {
+        "title": "Allama Iqbal's Vision",
+        "content": "In 1930, Allama Muhammad Iqbal articulated the vision of a separate state for Muslims in northwestern India during his presidential address to the Muslim League session in Allahabad."
+      },
+      "urdu": {
+        "title": "علامہ اقبال کا وژن",
+        "content": "1930 میں، علامہ محمد اقبال نے الہ آباد میں مسلم لیگ کے اجلاس میں اپنے صدارتی خطاب کے دوران شمال مغربی ہندوستان میں مسلمانوں کے لیے ایک الگ ریاست کے وژن کو پیش کیا۔"
+      }
+    },
+    {
+      "id": "H006",
+      "type": "history",
+      "year": "1940",
+      "english": {
+        "title": "Pakistan Resolution",
+        "content": "The Lahore Resolution, passed on March 23, 1940, formally demanded the creation of independent states for Muslims in British India, laying the groundwork for Pakistan's creation."
+      },
+      "urdu": {
+        "title": "قرارداد پاکستان",
+        "content": "23 مارچ 1940 کو منظور ہونے والی لاہور قرارداد نے باضابطہ طور پر برطانوی ہند میں مسلمانوں کے لیے آزاد ریاستوں کے قیام کا مطالبہ کیا، جس نے پاکستان کی تخلیق کی بنیاد رکھی۔"
+      }
+    },
+    {
+      "id": "H007",
+      "type": "history",
+      "year": "1947",
+      "english": {
+        "title": "Independence of Pakistan",
+        "content": "Pakistan gained independence on August 14, 1947, emerging as a sovereign nation for Muslims of the subcontinent, led by Muhammad Ali Jinnah as its first Governor-General."
+      },
+      "urdu": {
+        "title": "قیام پاکستان",
+        "content": "پاکستان نے 14 اگست 1947 کو آزادی حاصل کی، برصغیر کے مسلمانوں کے لیے ایک خودمختار قوم کے طور پر ابھرا، جس کی قیادت محمد علی جناح نے اپنے پہلے گورنر جنرل کے طور پر کی۔"
+      }
+    }
+  ]
